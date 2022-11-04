@@ -69,6 +69,13 @@ public class WhileLoopFun {
      */
     public int maxDoubles(int number, int threshold) {
         int doubleCount = 0;
+        int twice = number;
+        while ((twice * 2) <= threshold)
+        {
+            twice *= 2;
+            doubleCount ++;
+        }
+        return doubleCount;
     }
 
     /**Returns true if number is prime (i.e. it has exactly two divisors: 1 and itself) and false
@@ -84,6 +91,19 @@ public class WhileLoopFun {
      but 1 has only a single divisor! (don’t believe it? Google it!)
      */
     public boolean isPrime(int number) {
+        if (number == 1)
+        {
+            return false;
+        }
+        int divisor = 2;
+        while (divisor < number)
+        {
+            if (number % divisor == 0)
+            {
+                return false;
+            }
+            divisor ++;
+        }
         return true;
     }
 }
